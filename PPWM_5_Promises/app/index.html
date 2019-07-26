@@ -1,0 +1,56 @@
+<!-- 
+MATA KULIAH : Paktikum Pemrograman Web Mobile 
+PERTEMUAN   : 5 (Promises)
+NIM         : 165610029
+NAMA        : Afriza Dwi Nurrochim
+GitHub      : 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- tag untuk menyesuaikan tampilan pada perangkat mobile -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <!-- untuk set karakter -->
+    <meta charset="utf-8">
+    <title>Praktikum PWM 5</title>
+    <!-- css untuk tampilan -->
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>My Promises</h1>
+    </header>
+
+    <main>
+      <label for="country">Nama Kota:</label>
+      <input id="country" type="text" placeholder="Masukan Spain/Chile/Peru"><br><br>
+      <button id="get-image-name">Peroleh Nama Gambar</button><br><br>
+      <button id="fetch-flag-image">Peroleh Gambar Bendera</button><br><br>
+      <div class="img-container" id="img-container">
+        <!-- gambar ditambahkan secara dinamis -->
+      </div>
+    </main>
+
+    <footer>
+      <a href="https://github.com/google-developer-training/pwa-training-labs">GitHub</a>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+    <script>
+      const country = document.getElementById('country');
+
+      const getImageNameButton = document.getElementById('get-image-name');
+      getImageNameButton.addEventListener('click', function() {
+        app.getImageName(country.value);
+      });
+
+      const flagChainButton = document.getElementById('fetch-flag-image');
+      flagChainButton.addEventListener('click', function() {
+        app.flagChain(country.value);
+      });
+
+    </script>
+  </body>
+</html>
