@@ -1,0 +1,31 @@
+<!-- 
+MATA KULIAH : Paktikum Pemrograman Web Mobile 
+PERTEMUAN   : 8 (IndexDB)
+NIM         : 165610029
+NAMA        : Afriza Dwi Nurrochim
+GitHub      : 
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- melampirkan file JavaScript -->
+  <script type="text/javascript" src="js/idb.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <title>Praktikum PWM 8</title>
+</head>
+<body bgcolor="lighblue">
+  <h1>My Couches-N-Things</h1>
+  <button id="addProducts" onclick="idbApp.addProducts()">Tambah Produk</button></br></br>
+  <h2>Cari Produk</h2>
+  Berdasarkan Nama: <input type="text" id="name" placeholder="Chair,Couch,Armchair,Stool,Dresser,Cabinet"> <button id="byName" onclick="idbApp.displayByName()">Cari</button></br></br>
+  Berdasarkan Harga: <input type="text" id="priceLower" placeholder="Min"><input type="text" id="priceUpper" placeholder="Max"> <button id="byPrice" onclick="idbApp.getByPrice()">Cari</button></br></br>
+  Berdasarkan Deskripsi: <input type="text" id="desc" placeholder="Description"> <button id="byDesc" onclick="idbApp.getByDesc()">Cari</button></br></br>
+  <div id="results"></div>
+  <h2>Pesanan</h2>
+  <button id="addOrders" onclick="idbApp.addOrders()">Tambah Pesanan</button></br></br>
+  <button id="showOrders" onclick="idbApp.showOrders()">Tampilkan Pesanan</button></br></br>
+  <div id="orders"></div>
+  <button id="fulfill" onclick="idbApp.fulfillOrders()">Pesanan Terpenuhi</button></br></br>
+  <div id="receipt"></div>
+</body>
+</html>
