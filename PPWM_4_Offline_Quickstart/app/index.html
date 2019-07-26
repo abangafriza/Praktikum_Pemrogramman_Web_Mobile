@@ -1,0 +1,73 @@
+<!-- 
+MATA KULIAH : Paktikum Pemrograman Web Mobile 
+PERTEMUAN   : 4 (Offline Quickstart)
+NIM         : 165610029
+NAMA        : Afriza Dwi Nurrochim
+GitHub      : 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta charset="utf-8">
+  <title>Praktikum PWM 4</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+  <header>
+    <h1>My Offline Quickstart</h1>
+  </header>
+  <main>
+    <section class="card">
+      <div class="img-container">
+        <img src="images/space1.jpg" alt="The earth as caputured from space, illumnitated by cosmic radiation">
+      </div>
+      <p>
+        Orang yang kuat hatinya, Bukan mereka yang tidak pernah menangis, Melainkan Orang yang tetap tegar ketika banyak Orang menyakitinya.
+      </p>
+    </section>
+    <section class="card">
+      <div class="img-container">
+        <img src="images/space2.jpg" alt="Looking through the inside of space equipment">
+      </div>
+      <p>
+        Seberat apapun beban masalah yang kamu hadapi saat ini, percayalah bahwa semua itu tidak pernah melebihi batas kemampuan kamu.
+      </p>
+    </section>
+    <section class="card">
+      <div class="img-container">
+        <img src="images/space3.jpg" alt="A spacecraft launches into the night sky">
+      </div>
+      <p>
+        Hargai dia yang membencimu, karena dia adalah penggemar yang telah menghabiskan waktunya hanya untuk melihat setiap kesalahanmu.
+      </p>
+    </section>
+  </main>
+  <footer>
+    <ul class="flex-list">
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#share">Bagikan</a></li>
+      <li><a href="#contact">Kontak</a></li>
+      <li><a href="#about">Tentang</a></li>
+    </ul>
+  </footer>
+
+   <!-- Skrip untuk mendaftarkan service worker -->
+   <script>
+   // Mengecek support dari browser
+   if ('serviceWorker' in navigator) {
+	  // jika browser mendukung SW maka service worker didaftarkan
+      navigator.serviceWorker.register('afriza-sw.js')
+        .then(function(registration) {
+			// ditampilkan pada console jika SW berhasil didaftarkan
+            console.log('Berhasil Didaftarkan : ', registration);
+      })
+      .catch(function(error) {
+		  // ditampilkan jika gagal mendaftarkan SW
+          console.log('Gagal Didaftarkan : ', error);
+        });
+      }
+</script>
+</body>
+</html>
