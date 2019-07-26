@@ -1,0 +1,46 @@
+<!-- 
+MATA KULIAH : Paktikum Pemrograman Web Mobile 
+PERTEMUAN   : 3 (Service-Worker)
+NIM         : 165610029
+NAMA        : Afriza Dwi Nurrochim
+GitHub      : 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- encode kumpulan karakter -->
+    <meta charset="utf-8">
+    <!-- Set the viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Judul pada tab browser -->
+    <title>Praktikum PWM 3</title>
+    <!-- Menambahkan stylesheet -->
+    <link href="styles/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Service Worker Example</h1>
+    <a href="other.html">Other page</a>
+    <br><br>
+    <a href="below/another.html">Another page</a>
+    <script>
+
+    // TODO 2.0 : Script untuk mendaftarkan service worker
+   if ('serviceWorker' in navigator) {
+      // Jika ada maka servis worker dijalankan (load)
+      window.addEventListener('load', function() {
+        // Jika ada maka service worker dijalankan (load)
+        navigator.serviceWorker.register('afriza-sw.js')
+          .then(reg => {
+            // Jika ada maka servis worker dijalankan (load)
+            console.log('Service worker registered!', reg);
+          })
+          .catch(err => {
+            // Tampilkan pada console log browser jika gagal didaftarkan
+            console.log('Service worker registration failed: ', err);
+          });
+      });
+    }
+
+    </script>
+  </body>
+</html>
