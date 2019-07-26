@@ -1,0 +1,69 @@
+<!-- 
+MATA KULIAH : Paktikum Pemrograman Web Mobile 
+PERTEMUAN   : 6 (Fetch API)
+NIM         : 165610029
+NAMA        : Afriza Dwi Nurrochim
+GitHub      : 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- penyesuaian tampilan pada perangkat mobile -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
+    <!-- setting karakter -->
+    <meta charset="utf-8">
+    <title>Praktikum PWM 6</title>
+    <!-- pengaturan tampilan .css -->
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+
+    <header>
+      <h1>My Fetch API</h1>
+    </header>
+
+    <main>
+      <section class="buttons-container">
+        <!-- tombol fetch data JSON -->
+        <button id="json-btn">Fetch JSON</button>
+        <!-- tombol fetch data Gambar -->
+        <button id="img-btn">Fetch image</button>
+        <!-- tombol fetch data Teks -->
+        <button id="text-btn">Fetch text</button>
+        <button id="head-btn">HEAD request</button>
+      </section>
+
+      <section class="form-container">
+        <form action="#" id="msg-form">
+          <div class="form-item">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" />
+          </div>
+          <div class="form-item">
+            <label for="msg">Pesan:</label>
+            <textarea id="msg" name="message"></textarea>
+          </div>
+          <button id="post-btn" type="button">SIMPAN</button>
+        </form>
+      </section>
+
+      <section class="img-container" id="img-container">
+        <!-- image licensed CC0 - no attribution required https://unsplash.com/photos/Pzu9f6Nby5w -->
+        <!-- gambar akan ditambahkan secara dinamis pada bagian ini -->
+      </section>
+
+      <section class="text-container">
+        <p id="message">
+          <!-- sample teks dari https://en.wikipedia.org/wiki/Fetch_(game) -->
+          <!-- pesan akan ditambahkan secara dinamis pada bagian ini -->
+        </p>
+      </section>
+
+    </main>
+
+    <footer>
+    </footer>
+    <!-- pernyertaan file javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
