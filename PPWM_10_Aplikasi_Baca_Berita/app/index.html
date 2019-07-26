@@ -1,0 +1,142 @@
+<!-- 
+MATA KULIAH : Paktikum Pemrograman Web Mobile 
+PERTEMUAN   : 10 (Aplikasi Baca Berita)
+NIM         : 165610029
+NAMA        : Afriza Dwi Nurrochim
+GitHub      : 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta charset="utf-8">
+  <title>Praktikum PWM 10</title>
+  <link rel="stylesheet" href="styles/main.css" />
+
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Space Missions">
+  <meta name="apple-mobile-web-app-title" content="Space Missions">
+  <meta name="theme-color" content="#FF9800">
+  <meta name="msapplication-navbutton-color" content="#FF9800">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-starturl" content="/index.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="icon" sizes="128x128" href="/images/touch/icon-128x128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="/images/touch/icon-128x128.png">
+  <link rel="icon" sizes="192x192" href="/images/icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/images/touch/icon-192x192.png">
+  <link rel="icon" sizes="256x256" href="/images/touch/icon-256x256.png">
+  <link rel="apple-touch-icon" sizes="256x256" href="/images/touch/icon-256x256.png">
+  <link rel="icon" sizes="384x384" href="/images/touch/icon-384x384.png">
+  <link rel="apple-touch-icon" sizes="384x384" href="/images/touch/icon-384x384.png">
+  <link rel="icon" sizes="512x512" href="/images/touch/icon-512x512.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="/images/touch/icon-512x512.png">
+</head>
+
+<body>
+  <header>
+    <h1>BERITA HARI INI</h1>
+  </header>
+  <main>
+    <section id="installBanner" class="banner">
+      <button id="installBtn">Install app</button>
+    </section>
+    <section class="card">
+      <div class="img-container">
+        <!-- CC0 image from https://unsplash.com/photos/NuE8Nu3otjo -->
+        <img src="images/ektp.jpeg" alt="Gambar e-ktp sapi">
+      </div>
+      <p>
+      <h3>WOW ! Sapi Di Banyuwangi Punya KTP & Asuransi</h3>
+     <i> 01/07/2019 </i>: Tak hanya warga yang didata di Banyuwangi. Hewan ternak juga punya kartu pengenal
+      layaknya E-KTP. Pemkab Banyuwangi memiliki inovasi pendataan hewan ternak digital. Khususnya jenis
+      sapi melalui kartu Elektronik Ternak (E-Nak). Hal ini dilakukan untuk memantau perkembangan kesahatan sapi
+      dan tentunya sapi ini mendapatkan jaminan asuransi.
+      </p>
+    </section>
+    <section class="card">
+      <div class="img-container">
+        <!--CC0 image from https://unsplash.com/photos/cIX5TlQ_FgM -->
+        <img src="images/macan.jpg" alt="Gambar macan dahan">
+      </div>
+      <p>
+      <h3>Macan Dahan yang Mati Dikulti</h3>
+      <i>01/07/2019 </i>: Sebuah unggahan foto yang beredar di Facebook mendadak viral karena menunjukan seekor macan
+      dahan mati dikuliti. Macan dahan yang memiliki nama ilmia Neofelis Nebulosa merupakan jenis kucing 
+      berukuran sedang dengan panjang tubuh bisa mencapai 95 cm dan bulu berwarna kelabu kecoklatan.
+      </p>
+    </section>
+    <section class="card">
+      <div class="img-container">
+        <!-- CC0 image from https://unsplash.com/photos/n463SoeSiVY -->
+        <img src="images/gitar.jpeg" alt="Gambar pengrajin gitar klasik">
+      </div>
+      <p>
+      <h3>Keren ! Gitar Klasik Made In Lamongan Tembus Pasar Internasional</h3>
+      <i>01/07/2019 </i>: Tak banyak yang tahu ternyata di Lamongab ada pengrajin gitar yang sudah go internasional. Selain
+      dipasarkan di Indonesia, gitar karya warga lamongan ini telah melanglang buana di dunia internasional. Dia adalah Ahmad Muzakki, warga Kelurahan Jetis, Kecamatan Lamongan, pengrajin gitar klasik yang hasil karyanya telah tembus sejumlah negara. 
+      </p>
+    </section>
+  </main>
+  <footer>
+    <ul class="flex-list">
+     <!-- <li><a href="#home">home</a></li> -->
+     <!-- <li><a href="#share">share</a></li> -->
+     <!-- <li><a href="#contact">contact</a></li> -->
+     <li><a href="#about">INFO BERITA : 0815 XXXX XXXX</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('afriza-sw.js')
+          .then(reg => {
+            console.log('Service worker registered! 😎', reg);
+          })
+          .catch(err => {
+            console.log('😥 Service worker registration failed: ', err);
+          });
+      });
+    }
+  </script>
+
+  <script>
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', event => {
+
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      event.preventDefault();
+
+      // Stash the event so it can be triggered later.
+      deferredPrompt = event;
+
+      // Attach the install prompt to a user gesture
+      document.querySelector('#installBtn').addEventListener('click', event => {
+
+        // Show the prompt
+        deferredPrompt.prompt();
+
+        // Wait for the user to respond to the prompt
+        deferredPrompt.userChoice
+          .then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the A2HS prompt');
+            } else {
+              console.log('User dismissed the A2HS prompt');
+            }
+            deferredPrompt = null;
+          });
+      });
+
+      // Update UI notify the user they can add to home screen
+      document.querySelector('#installBanner').style.display = 'flex';
+    });
+  </script>
+
+</body>
+</html>
