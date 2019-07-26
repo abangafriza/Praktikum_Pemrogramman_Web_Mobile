@@ -1,0 +1,63 @@
+<!-- 
+MATA KULIAH : Paktikum Pemrograman Web Mobile 
+PERTEMUAN   : 7 (Caching Files With Service Worker)
+NIM         : 165610029
+NAMA        : Afriza Dwi Nurrochim
+GitHub      : 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- encode set karakter -->
+  <meta charset="utf-8">
+  <!-- pengaturan viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <!-- judul pada tab browser -->
+  <title>Praktikum PWM 7</title>
+  <!-- lampiran halaman .css -->
+  <link rel="stylesheet" href="style/main.css" />
+</head>
+<body>
+  <header>
+    <h1>My Photo blog</h1>
+  </header>
+  <main>
+    <div class="img-container">
+      <img src="images/still_life_medium.jpg" alt="Whuuutsss !!!">
+    </div>
+    <h2>Selamat Datang</h2>
+    <p>
+      Sebuah pantai yang memiliki suasana asri dan alamnya yang indah, tentulah menjadi kegemaran siapapun bukan? mengingat pola hidup dan tekanan sehari-hari ditengah kehidupan kota Metropolitan yang cenderung menyebabkan tingkat stress cukup tinggi. Bagi masyarakat kaum urban, tentulah mereka membutuhkan suasana baru sekedar untuk merefreshkan pikiran agar menjadi bersemangat kembali. Mengingat akan hal tersebut, maka liburan lah menjadi jawaban terbaik untuk segala persoalan tersebut.
+    </p>
+    <ul>
+      <li><a href="/pages/post1.html">Horses in a field</a></li>
+      <li><a href="/pages/post2.html">Old voltmeter</a></li>
+      <li><a href="/pages/post3.html">Geese in the sky</a></li>
+      <li><a href="/non-existent.html">Non-existent file</a></li>
+    </ul>
+  </main>
+  <footer>
+    <a href="#">Twitter</a>
+    <a href="#">Facebook</a>
+    <a href="#">Google+</a>
+  </footer>
+  <script>
+    // Mengecek apakah ada servis worker yang dijalankan pada browser
+    if ('serviceWorker' in navigator) {
+      // Jika ada maka servis worker dijalankan (load)
+      window.addEventListener('load', function() {
+        // Jika ada maka service worker dijalankan (load)
+        navigator.serviceWorker.register('afriza-sw.js')
+          .then(reg => {
+            // Jika ada maka servis worker dijalankan (load)
+            console.log('Service worker registered!', reg);
+          })
+          .catch(err => {
+            // Tampilkan pada console log browser jika gagal didaftarkan
+            console.log('Service worker registration failed: ', err);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
